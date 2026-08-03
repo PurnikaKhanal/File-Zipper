@@ -44,13 +44,25 @@ def compress(input_file, output_file):
         original_size = len(data)
         print("   Read", original_size, "bytes")
         
-        # If the file is empty, just write a header and stop
+        # If the file is empty, write a complete 16-byte header and stop.
         if original_size == 0:
             print("   Warning: Input file is empty")
             with open(output_file, 'wb') as f:
                 f.write(struct.pack('I', 0))  # Original size
                 f.write(struct.pack('I', 0))  # Compressed size
                 f.write(struct.pack('H', 0))  # Tree size
+                f.write(struct.pack('B', 0))  # Padding bits
+                f.write(b'\x00' * 5)        # Reserved space
+
+            print("============================================================")
+            print("COMPRESSION SUCCESSFUL")
+            print("============================================================")
+            print("Original size:     ", 0, "bytes")
+            print("Compressed size:   ", 16, "bytes")
+            print("Compression ratio: ", "0.0%")
+            print("Bytes saved:       ", 0, "bytes")
+            print("============================================================")
+
             return {
                 'original_size': 0,
                 'compressed_size': 16,
