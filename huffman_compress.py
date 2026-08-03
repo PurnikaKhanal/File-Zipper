@@ -163,3 +163,4 @@ if __name__ == "__main__":
     
     result = compress(test_file, test_file + ".huf")
     print(result)
+    
