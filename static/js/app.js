@@ -23,7 +23,6 @@ async function uploadFile(endpoint, resultPanelId) {
       return;
     }
 
-    // Show correct panel content
     if (endpoint.includes("compress")) {
       panel.innerHTML = `
         <h3>Compression Result</h3>
@@ -40,7 +39,6 @@ async function uploadFile(endpoint, resultPanelId) {
       `;
     }
   } catch (err) {
-    const panel = document.getElementById(resultPanelId);
     panel.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
   }
 }
