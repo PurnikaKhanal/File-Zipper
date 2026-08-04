@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Zipper</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>File Zipper</h1>
+
+    <!-- File upload -->
+    <input type="file" id="fileInput">
+
+    <!-- Action buttons -->
+    <div class="buttons">
+      <button id="compressBtn">Compress</button>
+      <button id="decompressBtn">Decompress</button>
+    </div>
+
+    <!-- Compression results -->
+    <div id="compressResult" class="result-panel">
+      <!-- Compression results will appear here -->
+    </div>
+
+    <!-- Decompression results -->
+    <div id="decompressResult" class="result-panel">
+      <!-- Decompression results will appear here -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

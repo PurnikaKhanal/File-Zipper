@@ -1,0 +1,2 @@
+Hello Huffman compression test.
+This file has repeated words and characters.
